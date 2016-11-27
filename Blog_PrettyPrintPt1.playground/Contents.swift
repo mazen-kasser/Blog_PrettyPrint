@@ -2,7 +2,7 @@ import UIKit
 
 print("Hello, beautiful world! I love you")
 
-func combinedWeatherConditions(lhs: Int, _ rhs: Int) -> Int {
+func combinedWeatherConditions(_ lhs: Int, _ rhs: Int) -> Int {
     return lhs + rhs
 }
 
@@ -19,17 +19,17 @@ let string = "Emojis are life"
 print("🔹 " + string)
 
 let date = NSDate()
-print("🕒 " + String(date))
+print("🕒 " + String(describing: date))
 
 let url = NSURL(string: "http://www.andyyhope.com")!
-print("🌏 " + String(url))
+print("🌏 " + String(describing: url))
 
 let userInfo = [NSLocalizedDescriptionKey: "File not found"]
 let error = NSError(domain: "Domain", code: 404, userInfo: userInfo)
 print("❗️ " + "\(error.code): " + error.localizedDescription)
 
-let anyObject = UIColor.redColor()
-print("◽️ " + String(anyObject))
+let anyObject = UIColor.red
+print("◽️ " + String(describing: anyObject))
 
 let joke = "What is this... A center for ANTS?!"
 print("🏫🐜 " + joke)

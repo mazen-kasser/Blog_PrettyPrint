@@ -9,33 +9,33 @@ enum log {
     case any(_: Any)
 }
 
-postfix operator / { }
+postfix operator /
 
 postfix func / (target: log?) {
     guard let target = target else { return }
     
     func log<T>(emoji: String, _ object: T) {
-        print(emoji + " " + String(object))
+        print(emoji + " " + String(describing: object))
     }
     
     switch target {
     case .ln(let line):
-        log("✏️", line)
+        log(emoji: "✏️", line)
         
     case .url(let url):
-        log("🌏", url)
+        log(emoji: "🌏", url)
         
     case .error(let error):
-        log("❗️", error)
+        log(emoji: "❗️", error)
         
     case .any(let any):
-        log("⚪️", any)
+        log(emoji: "⚪️", any)
         
     case .obj(let obj):
-        log("◽️", obj)
+        log(emoji: "◽️", obj)
         
     case .date(let date):
-        log("🕒", date)
+        log(emoji: "🕒", date)
     }
 }
 
@@ -44,11 +44,11 @@ let url = "http://www.andyyhope.com"
 let date = NSDate()
 let any = ["Key": 2]
 
-log.ln("Pretty")/
+log.ln(string)/
 log.url(url)/
-log.any(date)/
-
-log.any(UIColor.redColor())/
+log.date(date)/
+log.any(any)/
+log.obj(UIColor.red)/
 
 
 
